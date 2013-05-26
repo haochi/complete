@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Complete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="complete.js"></script>
+    <style>.complete-item{ margin: 5px; }</style>
+  </head>
+
+  <body>
+    <div class="container">
+      <form>
+        <input type="text" class="complete" />
+        <input type="text" />
+      </form>
+    </div>
+    <script>
+    $(function(){
+      $(".complete").complete({
+        validate: function(value){
+          return value.length > 0;
+        },
+        source: ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],
+        delimiters: [188],
+        added: function(value, item){
+          if(!~value.indexOf("@")){
+            item.find(".complete-label").css("border-bottom", "1px dotted red");
+          }
+        },
+      });
+    });
+    </script>
+  </body>
+</html>
+

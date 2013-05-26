@@ -25,9 +25,10 @@
     .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
   }
 
-  width: 206px; // plus 12px padding and 2px border
+  // width: 206px; // plus 12px padding and 2px border
   // end from bootstrap
 
+  cursor: text;
 
   .complete-items{
     display: inline;
@@ -39,7 +40,6 @@
     margin: 2px;
   }
   .complete-label{
-    cursor: text;
     border-right: 1px dashed @white;
   }
   .complete-close{
@@ -48,11 +48,14 @@
   .complete-label, .complete-close{
     padding: @paddingMini;
   }
-  .complete, .complete:focus{
+  .complete-input, .complete-input:focus{
+    display: inline;
     resize: none;
-    width: 90%;
     border: none;
     box-shadow: none;
     transition: none;
+  }
+  .complete-input:focus{
+    width: 95%;
   }
 }

@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <form>
-        <input type="text" class="complete input-xxlarge" name="email"></input>
+        <input type="text" class="complete input-xxlarge" name="email" autocomplete="off"></input>
         <input type="text" />
       </form>
     </div>
@@ -29,7 +29,7 @@
         delimiters: [188],
         added: function(value, item){
           if(!~value.indexOf("@")){
-            item.find(".complete-label").css("border-bottom", "1px dotted red");
+            item.find(".complete-label").css("border-bottom", "2px dotted red");
           }
           if(value.length > 20){
             item.find(".complete-label").html(value.substring(0, 20) + "&hellip;");

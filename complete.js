@@ -14,7 +14,7 @@
         close.closest(dotClass(c.item)).remove();
       });
 
-      items.on("dblclick", dotClass(c.label), function(){
+      items.on("click", dotClass(c.label), function(){
         var label = $(this);
         var item = label.closest(dotClass(c.item));
         item.remove();
